@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+  <meta charset="utf-8">
+  <title>Meet'n sport</title>
+  <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="/projet_tutCurrent/jquery-ui-1.12.1.custom/jquery-ui.css">
+
+  <script src="javascript/script.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block header %}
+         <div class="menu">
+            <nav>
+                <ul>
+                    <li><a class="accueil" id="focus" href="accueil.php">Accueil</a></li>
+                    <li><a class="activites" href="activites.php">Les activités</a></li>
+                    <li><a class="messagerie" href="messagerie.php">Messagerie</a></li>
+                    <li><a class="forum" href="forum.php">Forum</a></li>
+                    <li><a class="membres" href="membres.php">Les membres</a></li>
+                    <li class="button"><a id="connexion">Connexion</a></li>    
+                    <li class="button" id="inscription"><a>Inscription</a></li>
+                </ul>
+            </nav>
+        </div>
+          <p id="titre">Meet'n sport</p>
+           
+    <!--Image-->
+    
+    <img src="test.png" id="image_principale" alt="Image sport">
+        {% endblock %}
+       {% block content %}{% endblock %}
+        <div id="footer">
+            {% block footer %}
+            <!--Footer-->
+            <footer>
+                <ul>
+                    <li><a id="office" href="office">Back office</a></li>       
+                    <li><a id="legales" href="legales">Mentions légales</a></li>
+                    <li><a id="accessibilite" href="accessibilite">Accessibilité</a></li>
+                </ul>
+            </footer>
+    
+            {% endblock %}
+        </div>
+    </body>
+      <!--Script-->
+    <script>
+
+  $( function() {
+    $( "#dialogConnexion" ).dialog({
+      autoOpen: false,
+        modal:true,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "drop",
+        duration: 1000
+      },
+        position: {my: "top", at: "bottom", of: "#connexion"}
+    });
+      $('body').on('click', '.ui-widget-overlay', function(e){
+  $('#dialogConnexion').dialog('close');
+});
+      
+ $(".ui-widget-content").css("background-color", "transparent");
+$(".ui-dialog").css("border", "0 none");
+      $(".ui-dialog-titlebar").hide();
+    $( "#connexion" ).on( "click", function() {
+      $( "#dialogConnexion" ).dialog( "open" );
+    });
+
+    $( "#dialogInscription" ).dialog({
+      autoOpen: false,
+        modal:true,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "drop",
+        duration: 1000
+      },
+        position: {my: "top", at: "bottom", of: "#inscription"}
+    });
+      $('body').on('click', '.ui-widget-overlay', function(e){
+  $('#dialogInscription').dialog('close');
+});
+      
+ $(".ui-widget-content").css("background-color", "transparent");
+$(".ui-dialog").css("border", "0 none");
+      $(".ui-dialog-titlebar").hide();
+    $( "#inscription" ).on( "click", function() {
+      $( "#dialogInscription" ).dialog( "open" );
+    });
+  } );
+    </script>
+</html>

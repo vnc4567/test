@@ -1,0 +1,117 @@
+{% extends "mainLayout.html" %}
+
+{% block content %}
+   <!--Cadre choix activités-->
+    <div class="activités">
+        <!--Photo-->
+        <div class="visuel">
+            <div class="cadre_activités">
+                
+            </div>
+        </div>
+    
+    </div>
+<!--Recherche activités-->
+    <div id="filtres">
+        <h1>Rechercher une activité</h1>
+        <form class="recherche" method="post" action=""><input type="date" max="2012-06-25" min="2011-08-13" name="the_date">
+        
+            <select name="Tous les sports">
+                <option value="Accrobranche">Accrobranche</option>  Sports de combat  jogging
+                <option value="Alpinisme">Alpinisme</option>
+                <option value="Athlétisme">Athlétisme</option>
+                <option value="Aviron">Aviron</option>
+                <option value="Babyfoot">Baby foot</option>
+                <option value="Badminton">Badminton</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Basket ball">Basket ball</option>
+                <option value="Beach volley">Beach volley</option>
+                <option value="Biathlon">Biathlon</option>
+                <option value="Billard">Billard</option>
+                <option value="BMX">BMX<option>
+                <option value="Bowling">Bowling</option>
+                <option value="Boxe">Boxe</option>
+                <option value="Canyoning">Canyoning</option>
+                <option value="Cerf volant">Cerf volant</option>
+                <option value="Danses">Danses</option>
+                <option value="Equitation">Equitation</option>
+                <option value="Escalade">Escalade</option>
+                <option value="Escrime">Escrime</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Fléchettes">Fléchettes</option>
+                <option value="Football">Football</option>
+                <option value="Futsal">Futsal</option>
+                <option value="Golf">Golf</option>  Sports de combat danse
+                <option value="Gymnastique">Gymnastique</option>
+                <option value="Haltérophilie">Haltérophilie</option>
+                <option value="Handbal">Handball</option>
+                <option value="Handisport">Handisport</option>
+                <option value="Hockey">Hockey</option>
+                <option value="Jetski">Jetski</option>
+                <option value="Jetski">Jogging</option>
+                <option value="Kitesurf">Kitesurf</option>                
+                <option value="Musculation">Musculation</option>
+                <option value="Padel">Padel</option>
+                <option value="Paintball">Paintball</option>
+                <option value="Paruchutisme">Paruchutisme</option>
+                <option value="Parapente">Parapente</option>
+                <option value="Patinage">Patinage</option>
+                <option value="Pêche">Pêche</option>
+                <option value="Pétanque">Pétanque</option>
+                <option value="Planche à voile">Planche à voile</option>
+                <option value="Plongée">Plongée</option>
+                <option value="Quad">Quad</option>
+                <option value="Rafting">Rafting</option>
+                <option value="Raid nature">Raid nature</option>
+                <option value="Rallye">Rallye</option>
+                <option value="Randonnées">Randonnées</option>
+                <option value="Roller">Roller</option>
+                <option value="Rugby">Rugby</option>  Sports de combat 
+                <option value="Salsa">Salsa</option>
+                <option value="Samba">Samba</option>
+                <option value="Self défense">Self défense</option>
+                <option value="Skateboard">Skateboard</option>
+                <option value="Ski de fond">Ski de fond</option>
+                <option value="Ski nautique">Ski nautique</option>
+                <option value="Snowboard">Snowboard</option>
+                <option value="Softball">Softball</option>
+                <option value="Squash">Squash</option>
+                <option value="Surf">Surf</option>
+                <option value="Taekwendo">Taekwendo</option>
+                <option value="Taï chi chuan">Taï chi chuan</option>
+                <option value="Tango">Tango</option>
+                <option value="Tennis">Tennis</option>
+                <option value="Tennis de table">Tennis de table</option>
+                <option value="Tir à l'arc">Tir à l'arc</option>
+                <option value="Trampoline">Trampoline</option>
+                <option value="Triathlon">Triathlon</option>
+                <option value="Ultimate fresbee">Ultimate fresbee</option>
+                <option value="Voile">Voile</option>
+                <option value="Volley Ball">Volley Ball</option>
+                <option value="VTT">VTT</option>
+                <option value="Water polo">Water polo</option>
+                <option value="Yoga">Yoga</option>
+                <option value="VTT">VTT</option>
+                <option value="Water polo">Water polo</option>
+  </select>
+        
+            
+       
+            <select name="Proche de">                
+                <option value="Antibes">Antibes</option>
+                <option value="Beausoleil">Beausoleil</option>
+                <option value="Biot">Biot</option>
+                <option value="Cagnes-sur-mer">Cagnes-sur-mer</option>
+                <option value="Cannes">Cannes</option>
+                <option value="Grasse">Grasse</option>
+                <option value="Le-Cannet">Le-Cannet</option>
+                <option value="Cannes">Mougins</option>
+                <option value="Nice">Nice</option>
+            </select>
+        </form>
+    
+    </div>
+    <div class="cadre1">
+        <h2 class="titrepartie">Les activités du jour</h2>
+    </div>
+{% endblock %}
