@@ -32,6 +32,36 @@
     <!--Image-->
     
     <img src="test.png" id="image_principale" alt="Image sport">
+         <div id="dialogConnexion" title="Basic dialog">
+        <form class="form-container">
+            <div class="form-title"><h2>Connexion</h2></div>
+            <div class="form-title">Pseudo</div>
+            <input class="form-field" type="text" name="firstname" /><br />
+            <div class="form-title">Mot de passe</div>
+            <input class="form-field" type="password" name="mdp" /><br />
+            <div class="submit-container">
+                <input class="submit-button" type="submit" value="Me connecter" />
+            </div>
+        </form>
+    </div>
+        <div id="dialogInscription" title="Basic dialog">
+            <form class="form-container">
+                <div class="form-title"><h2>Inscription</h2></div>
+                <div class="form-title">Pseudo</div>
+                <input class="form-field" type="text" name="firstname" /><br />
+                <div class="form-title">Mot de passe</div>
+                <input class="form-field" type="password" name="email" /><br />
+                <div class="form-title">Conformation du mot de passe</div>
+                <div class="form-title">Adresse mail</div>
+                <input type="checkbox" id="condbox" class="zoneDeSaisie" />
+                <a href="conditions.html" target="_blank">les conditions générales de vente.</a>
+                <input class="form-field" type="text" name="mail" /><br />
+                <div class="submit-container">
+
+                    <input class="submit-button" type="submit" value="S'inscrire" />
+                </div>
+            </form>
+        </div>
         {% endblock %}
        {% block content %}{% endblock %}
         <div id="footer">

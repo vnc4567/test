@@ -12,41 +12,19 @@
         </div>
     
     </div>
-    <div id="dialogConnexion" title="Basic dialog">
-        <form class="form-container">
-            <div class="form-title"><h2>Connexion</h2></div>
-            <div class="form-title">Pseudo</div>
-            <input class="form-field" type="text" name="firstname" /><br />
-            <div class="form-title">Mot de passe</div>
-            <input class="form-field" type="password" name="mdp" /><br />
-            <div class="submit-container">
-                <input class="submit-button" type="submit" value="Me connecter" />
-            </div>
-        </form>
-    </div>
-        <div id="dialogInscription" title="Basic dialog">
-            <form class="form-container">
-                <div class="form-title"><h2>Inscription</h2></div>
-                <div class="form-title">Pseudo</div>
-                <input class="form-field" type="text" name="firstname" /><br />
-                <div class="form-title">Mot de passe</div>
-                <input class="form-field" type="password" name="email" /><br />
-                <div class="form-title">Conformation du mot de passe</div>
-                <div class="form-title">Adresse mail</div>
-                <input type="checkbox" id="condbox" class="zoneDeSaisie" />
-                <a href="conditions.html" target="_blank">les conditions générales de vente.</a>
-                <input class="form-field" type="text" name="mail" /><br />
-                <div class="submit-container">
+   
 
-                    <input class="submit-button" type="submit" value="S'inscrire" />
-                </div>
-            </form>
-        </div>
+
+ 
+   
     
       <div id="rechercher">
-         
-        <form id="research">
-        <div class="titre2">Rechercher un sport</div>
+         <table id="tabRecherche">
+          <tbody>
+              <form id="research">
+             <tr>
+              <td style="width:50%;padding-right:3px">  
+                 <div class="titre2">Rechercher un sport :</div>
             <select name="Tous les sports" id="vil">
                 <option value="Accrobranche">Accrobranche</option>  Sports de combat  jogging
                 <option value="Alpinisme">Alpinisme</option>
@@ -68,6 +46,7 @@
                 <option value="Equitation">Equitation</option>
                 <option value="Escalade">Escalade</option>
                 <option value="Escrime">Escrime</option>
+                <option value="Fitness">Fitness</option>
                 <option value="Fitness">Fitness</option>
                 <option value="Fléchettes">Fléchettes</option>
                 <option value="Football">Football</option>
@@ -125,7 +104,10 @@
                 <option value="VTT">VTT</option>
                 <option value="Water polo">Water polo</option>
         </select>
-        <div class="titre2">Proche de</div>    
+                 
+              </td>
+              <td>
+                         <div class="titre2">Proche de :</div>    
             <select name="Proche de" id="villes">                
                 <option value="Antibes">Antibes</option>
                 <option value="Beausoleil">Beausoleil</option>
@@ -137,8 +119,23 @@
                 <option value="Cannes">Mougins</option>
                 <option value="Nice">Nice</option>
             </select>
-        </form>
-          <input class="btn" type="submit" value="Rechercher" />
+              </td>
+                 </form>
+            </tr>
+            <tr style=" text-align: center">
+              <td colspan="2">  
+                 
+                           <input class="btn" type="submit" value="Rechercher" />
+
+              </td>
+
+            </tr>
+          </tbody>
+         </table>
+        
+        
+
+        
     </div>
    
     <!--¨Partie: "Les dernières activités-->
