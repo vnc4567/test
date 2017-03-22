@@ -532,3 +532,22 @@ font-size: 28px;
   background: #e64641;
   text-decoration: none;
 }
+
+.btn {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  background: #d93f34;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+    width: 30%;
+    height: 40%;
+}
+
+.btn:hover {
+  background: #f02416;
+  text-decoration: none;
+}
