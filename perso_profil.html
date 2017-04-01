@@ -1,22 +1,46 @@
-{% extends "mainLayout.html" %}
+<!doctype html>
+<html lang="fr">
 
-{% block content %}
-   <!--Cadre choix activités-->
-    <div class="activités">
-        <!--Photo-->
-        <div class="visuel">
-            <div class="cadre_activités">
-                
-            </div>
-        </div>
-    
+<head>
+  <meta charset="utf-8">
+  <title>Meet'n sport</title>
+  <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="/projet_tut/jquery-ui-1.12.1.custom/jquery-ui.css">
+
+  <script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+ 
+    <h1 id="titre">Meet'n sport</h1>
+     <div class="menu">
+        <nav>
+            <ul>
+                <li><a class="accueil" id="focus" href="accueil.php">Accueil</a></li>
+                <li><a class="activites" href="activites.php">Les activités</a></li>
+                <li><a class="messagerie" href="messagerie.php">Messagerie</a></li>
+                <li><a class="forum" href="forum.php">Forum</a></li>
+                <li><a class="membres" href="membres.php">Les membres</a></li>
+                <li class="button"><a id="connexion">Connexion</a></li>    
+                <li class="button" id="inscription"><a>Inscription</a></li>
+            </ul>
+        </nav>
     </div>
-<!--Recherche activités-->
-    <div id="filtres">
-        <h1>Rechercher une activité</h1>
-        <form class="recherche" method="post" action=""><input type="date" max="2012-06-25" min="2011-08-13" name="the_date">
-        
-            <select name="Tous les sports">
+    
+    
+    
+    
+    
+      <div id="rechercher">
+         <table id="tabRecherche">
+          <tbody>
+              <form id="research">
+             <tr>
+              <td style="width:50%;padding-right:3px">  
+                 <div class="titre2">Rechercher un sport :</div>
+            <select name="Tous les sports" id="vil">
                 <option value="Accrobranche">Accrobranche</option>  Sports de combat  jogging
                 <option value="Alpinisme">Alpinisme</option>
                 <option value="Athlétisme">Athlétisme</option>
@@ -37,6 +61,7 @@
                 <option value="Equitation">Equitation</option>
                 <option value="Escalade">Escalade</option>
                 <option value="Escrime">Escrime</option>
+                <option value="Fitness">Fitness</option>
                 <option value="Fitness">Fitness</option>
                 <option value="Fléchettes">Fléchettes</option>
                 <option value="Football">Football</option>
@@ -93,11 +118,12 @@
                 <option value="Yoga">Yoga</option>
                 <option value="VTT">VTT</option>
                 <option value="Water polo">Water polo</option>
-  </select>
-        
-            
-       
-            <select name="Proche de">                
+        </select>
+                 
+              </td>
+              <td>
+                         <div class="titre2">Proche de :</div>    
+            <select name="Proche de" id="villes">                
                 <option value="Antibes">Antibes</option>
                 <option value="Beausoleil">Beausoleil</option>
                 <option value="Biot">Biot</option>
@@ -108,46 +134,31 @@
                 <option value="Cannes">Mougins</option>
                 <option value="Nice">Nice</option>
             </select>
-        </form>
+              </td>
+                 </form>
+            </tr>
+            <tr style=" text-align: center">
+              <td colspan="2">  
+                 
+                           <input class="btn" type="submit" value="Rechercher" />
+
+              </td>
+
+            </tr>
+          </tbody>
+         </table>
+    
+    <h2>Personnaliser son profil</h2>
+    
+    <div id="profil">
+        <div id="profil_photo">Pseudo</div>
+        <div id="infor">
+            <div id="naissance">12</div>
+            <div id="date_i">D</div>
+            <div id="sports_preferes"></div>
+        </div>
     
     </div>
-<div class="article">
-        <div id="dernieres_activites">
-              <h2 class="titrepartie">Les dernières activités créées:</h2>
-        <div style="float:left">
-{% for key, elm in activites %}
-	
-      
-            <div class="carre-first">
-                <div class="carre"></div>
-                <div class="details">
-                    <div class="date">20 mai</div>
-                    <div class="lieu">
-                        <img src="images/localisation.svg" id="to" alt="Lieu">Cannes
-                        
-                    </div>
-                    
-                
-                
-                </div>
-        
-            </div>
-        <div class="carre"></div>
-        <div class="carre"></div>
-        <div class="carre"></div>
-        </div>
-    </div>
-
-            <div class="title">{{ elm.intitule}}</div> 
-            <div class="content">
-                {{ elm.date }}
-            </div>
-
-        </div>
-{% endfor %}
-{% if not activites is defined %}
-    <div class="cadre1">
-        <h2 class="titrepartie">Les activités du jour</h2>
-    </div>
-{% endif %}
-{% endblock %}
+</body>
+    
+</html>

@@ -21,11 +21,13 @@
       <div id="rechercher">
          <table id="tabRecherche">
           <tbody>
-              <form id="research">
+              <form id="research" method="post" action="activites.php">
+ 
+
              <tr>
               <td style="width:50%;padding-right:3px">  
                  <div class="titre2">Rechercher un sport :</div>
-            <select name="Tous les sports" id="vil">
+            <select name="sports" id="vil">
                 <option value="Accrobranche">Accrobranche</option>  Sports de combat  jogging
                 <option value="Alpinisme">Alpinisme</option>
                 <option value="Athlétisme">Athlétisme</option>
@@ -108,7 +110,7 @@
               </td>
               <td>
                          <div class="titre2">Proche de :</div>    
-            <select name="Proche de" id="villes">                
+            <select name="ville" id="villes">                
                 <option value="Antibes">Antibes</option>
                 <option value="Beausoleil">Beausoleil</option>
                 <option value="Biot">Biot</option>
@@ -120,16 +122,17 @@
                 <option value="Nice">Nice</option>
             </select>
               </td>
-                 </form>
+                
             </tr>
             <tr style=" text-align: center">
               <td colspan="2">  
                  
-                           <input class="btn" type="submit" value="Rechercher" />
+                           <input class="btn" type="submit" value="Rechercher"  />
 
               </td>
 
             </tr>
+                   </form>
           </tbody>
          </table>
         
@@ -138,21 +141,28 @@
         
     </div>
    
-    <!--¨Partie: "Les dernières activités-->
+ <!--¨Partie: "Les dernières activités-->
     <div id="dernieres_activites">
         <h2 class="titrepartie">Les dernières activités créées:</h2>
+        
             <div class="carre-first">
                 <div class="carre"></div>
                 <div class="details">
+                    <div class="date">20 mai</div>
+                    <div class="lieu">
+                        <img src="images/localisation.svg" id="to" alt="Lieu">Cannes
+                        
+                    </div>
                     
                 
                 
                 </div>
         
             </div>
-        <div class="carre1"></div>
         <div class="carre"></div>
         <div class="carre"></div>
+        <div class="carre"></div>
+        </div>
     </div>
     
     <!--Partie: recherche par sports-->

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Meet'n sport</title>
+  <link rel="stylesheet" href="../style.css">
+      <link rel="stylesheet" href="/projet_tut/jquery-ui-1.12.1.custom/jquery-ui.css">
+
+  <script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+ 
+    <h1 id="titre">Meet'n sport</h1>
+     <div class="menu">
+        <nav>
+            <ul>
+                <li><a class="accueil" id="focus" href="identif_back_o.php">Accueil</a></li>
+                <li><a class="activites" href="activites.php">Gestion des comptes</a></li>
+                <li><a class="messagerie" href="messagerie.php">Gestion des activités</a></li>
+             </ul>
+        </nav>
+    </div>
+ <div>
+     <h3 id="comptes">Gestion des comptes</h3>
+     
+     <table class="of">
+       <tr>
+           <td>Pseudo</td>
+           <td class="tab">Mot de passe</td>
+           
+       </tr>
+       <tr>
+           <td class="tab">Michelle06</td>
+           <td>*******</td>
+           <td><input type="button" value="Supprimer le compte"></td>
+       </tr>         
+         <tr>
+           <td class="tab">Patrice_zen</td>
+           <td>*******</td>
+           <td><input type="button" value="Supprimer le compte"></td>
+       </tr>
+          <tr>
+           <td class="tab">Rom1_cannes</td>
+           <td>*******</td>
+           <td><input type="button" value="Supprimer le compte"></td>
+       </tr>
+</table>
+
+       
+
+</div>
+    
+</body>
+</html>
