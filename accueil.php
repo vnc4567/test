@@ -16,11 +16,14 @@ $twig = new Twig_Environment($loader);
 $act = new ActiviteDAL($db);
 //$elm = $act->createActivite("nomTest",1,"2017-05-05",7,1,"descrTest",1,1,"adresseTest");
 //$elm = $act->registerToActivite(2,1);
-
+$activites=$act->getAllActivite();
 $utilisateur = new UtilisateurDAL($db);
 //$utilisateur->deleteUtilisateur(2);
 //$utilisateur->createUtilisateur("pseudoTest","mdp","mail","2017-07-07");
 //$utilisateur->updateUtilisateur(3,"p","mdp2","mail2");
+
+if ( ! isset($_SESSION['id'])) $_SESSION['id'] =1;
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -29,8 +32,11 @@ $utilisateur = new UtilisateurDAL($db);
 
 <body>
   <?php 
-echo $twig->render('accueil.html');
-//    var_dump($elm);
+$template = $twig->loadTemplate('accueil.html');
+        echo $template->render(array(
+		   'activites' => $activites,
+	    ));   
+    //var_dump($activites);
          ?>
  
 </body>

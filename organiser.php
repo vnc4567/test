@@ -87,6 +87,23 @@
                 </div>
             </form>
         </div>
+    
+      <?php 
+       include 'class/ActiviteDAL.php';
+use DAL\ActiviteDAL; 
+    $db = new PDO('mysql:host=localhost;dbname=projet_tut;port=3307;charset=utf8', 'root',  '');
+if ( ! isset($_SESSION['id'])) $_SESSION['id'] =1;
+$act = new ActiviteDAL($db);
+    if(isset($_POST['nom'])&&isset($_POST['sports'])&&isset($_POST['nbr'])&&isset($_POST['niveau'])&&isset($_POST['infos'])&&isset($_POST['the_date'])&&isset($_POST['heure'])&&isset($_POST['villes'])&&isset($_POST['adresse']) )   
+    {
+        $string= $_POST['nom']." ".$_POST['sports']." ".$_POST['the_date']." ".$_POST['nbr']." ".$_POST['niveau']." ".$_POST['infos']." ".$_POST['villes']." ".$_SESSION['id']." ".$_POST['adresse'];
+        $result=$act->createActivite($_POST['nom'],1,$_POST['the_date'],$_POST['nbr'],1, $_POST['infos'],1, $_SESSION['id'],$_POST['adresse']);
+        
+       var_dump($string);
+   var_dump($result);
+    }
+    ?>
+    
     <!--Organiser une activité-->
         <div class="cadre12">
             <h2 class="titrepartie">Organiser une activité</h2>
@@ -95,10 +112,10 @@
                 <form id="recherche2" method="post" action="">
                 
                 <p>Sports</p> 
-                    <select name="Tous les sports">
-                        <option value="Accrobranche">Accrobranche</option>  Sports de combat  jogging
+                    <select name="sports">
+                        <option value="Accrobranche">Accrobranche</option>  
                         <option value="Alpinisme">Alpinisme</option>
-                        <option value="Athlétisme">Athlétisme</option>
+                        <option value="Athlétisme">Athletisme</option>
                         <option value="Aviron">Aviron</option>
                         <option value="Babyfoot">Baby foot</option>
                         <option value="Badminton">Badminton</option>
@@ -112,7 +129,7 @@
                         <option value="Boxe">Boxe</option>
                         <option value="Canyoning">Canyoning</option>
                         <option value="Cerf volant">Cerf volant</option>
-                        <option value="Danses">Danses</option>
+                        
                         <option value="Equitation">Equitation</option>
                         <option value="Escalade">Escalade</option>
                         <option value="Escrime">Escrime</option>
@@ -120,7 +137,7 @@
                         <option value="Fléchettes">Fléchettes</option>
                         <option value="Football">Football</option>
                         <option value="Futsal">Futsal</option>
-                        <option value="Golf">Golf</option>  Sports de combat danse
+                        <option value="Golf">Golf</option>  
                         <option value="Gymnastique">Gymnastique</option>
                         <option value="Haltérophilie">Haltérophilie</option>
                         <option value="Handbal">Handball</option>
@@ -145,7 +162,7 @@
                         <option value="Rallye">Rallye</option>
                         <option value="Randonnées">Randonnées</option>
                         <option value="Roller">Roller</option>
-                        <option value="Rugby">Rugby</option>  Sports de combat 
+                        <option value="Rugby">Rugby</option>  
                         <option value="Salsa">Salsa</option>
                         <option value="Samba">Samba</option>
                         <option value="Self défense">Self défense</option>
@@ -176,12 +193,13 @@
       </div>
 <div id="b">
     <p>
-    <label>Nombre de joueurs maximum</label> : <input type="text" name="pseudo" placeholder="Nombre de joueurs maximum"/>
+            <label>Nom de l'activité</label> : <input type="text" name="nom" placeholder="Nom de l'activité"/>
+    <label>Nombre de joueurs maximum</label> : <input type="text" name="nbr" placeholder="Nombre de joueurs maximum"/>
     </p>
 </div>
         <div id="c">        
             <p>Niveau souhaité</p> 
-                <select name="Niveau souhaité">
+                <select name="niveau">
                     <option value="Loisir">Loisir</option> 
                     <option value="Débutant">Débutant</option>
                     <option value="Moyen">Moyen</option>
@@ -195,19 +213,19 @@
        <textarea name="infos" id="infos"></textarea>
    </p>
 </div>
-        </form>
+        
             
     </div>
     <div class="cadre12">
         <h3>Quand</h3>
         <p>Date de l'activité</p><input type="date" max="2012-06-25" min="2011-08-13" name="the_date">
-        <p>Heure de RDV</p> <input type="time" name="wakeup">
+        <p>Heure de RDV</p> <input type="time" name="heure">
     
     </div>
         <div class="cadre12">
         <h3>Où</h3>
         <p>Ville</p>
-         <select name="Proche de">                
+         <select name="villes">                
                 <option value="Antibes">Antibes</option>
                 <option value="Beausoleil">Beausoleil</option>
                 <option value="Biot">Biot</option>
@@ -218,9 +236,10 @@
                 <option value="Cannes">Mougins</option>
                 <option value="Nice">Nice</option>
             </select>
-        <p>Adresse</p> <input type="text" name="pseudo" placeholder="Adresse exacte"/>
-    
+        <p>Adresse</p> <input type="text" name="adresse" placeholder="Adresse exacte"/>
+      <input class="btn" type="submit" value="Organiser" 
     </div>
+            </form>
      <footer>
         <ul>
             <li><a id="office" href="office">Back office</a></li>       
@@ -229,6 +248,7 @@
         </ul>
     
     </footer>
+            
     
     <!--Script-->
     <script>
