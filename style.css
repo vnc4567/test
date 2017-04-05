@@ -437,8 +437,8 @@ font-family: "andro";
 }
 /*Membres*/
 .membre{
-    width:30%;
-	height:40%;
+    width:80%;
+	height:90%;
 	background-image: url(images/silhouette.png);
     background-repeat: no-repeat;
     background-size: cover;

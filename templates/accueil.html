@@ -263,7 +263,7 @@
         <h2 class="titrepartie">Les dernières activités créées:</h2>
         {% for key, elm in activites %}
             <div class="carre-first">
-                <div class="carre"></div>
+                <div class="carre" onClick="Javascript:window.open('afficher_activite.php');"></div>
                 <div class="cat_sport">{{elm.id_sport}}</div>
                 
                 <div class="date">{{elm.date}}</div>

@@ -9,7 +9,7 @@ use DAL\UtilisateurDAL;
 
 $loader = new Twig_Loader_Filesystem( __DIR__ . './templates');
 
-$db = new PDO('mysql:host=localhost;dbname=projet_tut;port=3307;charset=utf8', 'root',  '');
+$db = new PDO('mysql:host=localhost;dbname=projet_tut;port=3306;charset=utf8', 'root',  '');
 
 $twig = new Twig_Environment($loader);
 

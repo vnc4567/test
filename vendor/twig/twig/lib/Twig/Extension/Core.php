@@ -1568,7 +1568,7 @@ function twig_get_attribute(Twig_Environment $env, Twig_Source $source, $object,
     // Some objects throw exceptions when they have __call, and the method we try
     // to call is not supported. If ignoreStrictCheck is true, we should return null.
     try {
-        $ret = $object->$method(...$arguments);
+        $ret = $object->$method($arguments);
     } catch (BadMethodCallException $e) {
         if ($call && ($ignoreStrictCheck || !$env->isStrictVariables())) {
             return;

@@ -1,0 +1,35 @@
+{% extends "mainLayout.html" %}
+
+{% block content %}
+ <div id="cadre5">
+        <h2 class="titrepartie">Titre de l'activité</h2>
+            <div id="partie_1">
+                <img src="images/badminton.jpg" id="image_activite" alt="Image inscrit">
+                <h2>Liste des participants</h2>
+                    <div class="carre2"></div>
+                    <div class="carre2"></div>
+                    <div class="carre2"></div>
+                    <div class="carre2"></div>
+                 
+                
+            
+            </div>
+            <div id="partie_2">
+                {% for key, elm in activites %}
+                <h3>Organisé par {{ elm.id_organisateur}}</h3>
+                <p>Catégorie: {{elm.id_sport}}</p>
+                <p>
+                    <img src="images/hour.svg" class="picto" alt="Image horloge">
+                </p>
+                <p>
+                    <img src="images/localisation.svg" class="picto" alt="Image localisation">{{elm.id_ville}}
+                </p>
+                <p id="descriptif">{{elm.description}}</p>
+                
+            
+            </div>
+            
+            <input id="co2" type="submit" value="S'inscrire"/>
+    </div>
+
+{% endblock %}
