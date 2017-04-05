@@ -44,13 +44,13 @@
         </form>
     </div>
         <div id="dialogInscription" title="Basic dialog">
-            <form class="form-container" onsubmit="return verifForm(this)">
+            <form class="form-container" method="post" action="accueil.php" onsubmit="return verifForm(this)">
                 <div class="form-title"><h2>Inscription</h2></div>
                 <div class="form-title" onblur="checkPseudo(this)">Pseudo</div>
                 <input class="form-field" type="text" name="pseudo" /><br />
                 <div class="form-title">Mot de passe</div>
                 <input class="form-field" type="password" name="mdp" /><br />
-                <div class="form-title">Conformation du mot de passe</div>
+                <div class="form-title">Confirmation du mot de passe</div>
                 <input class="form-field" type="password" name="mdp" /><br />
                 <div class="form-title" onblur="verifMail(this)">Adresse mail</div>
                  <input class="form-field" type="text" name="email" /><br />

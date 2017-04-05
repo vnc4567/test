@@ -11,6 +11,10 @@ class UtilisateurDAL{
 		$this->db = $db;
 	}
     
+    //connexion
+    public function connexion($pseudo,$mdo){
+        
+    }
     
     //recuperer tous les Utilisateurs
     public function getAllUtilisateur(){
@@ -44,6 +48,8 @@ class UtilisateurDAL{
             "mail" => $mail,
             "date_inscription" => $date
             ));
+        $id = $this->db->lastInsertId();
+        return $id;
     }
         
     //supprimer Utilisateur
