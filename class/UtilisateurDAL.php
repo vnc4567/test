@@ -12,8 +12,13 @@ class UtilisateurDAL{
 	}
     
     //connexion
-    public function connexion($pseudo,$mdo){
+    public function connexion($pseudo,$mdp){
+        $user = $this->db->query("SELECT id_utilisateur FROM utilisateur where pseudo='".$pseudo."' and mot_de_passe='".$mdp."'");
         
+        if($user->rowCount()==0)
+            return -1;
+        else 
+            return $user->fetch();
     }
     
     //recuperer tous les Utilisateurs

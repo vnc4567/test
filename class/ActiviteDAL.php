@@ -6,19 +6,40 @@ namespace DAL;
 class ActiviteDAL{
 
 	protected $db;
-
+    public $id,$sport,$dateT,$descr,$ville,$nom,$maxInscrit,$niveau,$adresse,$organisateur;
 	public function __construct($db){
 		$this->db = $db;
 	}
 
 	public function getAllActivite(){
-		$activite = $this->db->query('SELECT * FROM activite');
-		return $activite->fetchAll();
+		$response = $this->db->query('SELECT * FROM activite');
+        $items = array();
+		while($donnees=$response->fetch())
+        {
+            $temp= new ActiviteDAL($this->db);
+            $temp->dateT=$donnees['date'];
+            $temp->descr=$donnees['description'];
+            $temp->nom=$donnees['nom'];
+            $temp->id=$donnees['id_activite'];
+            $temp->ville=$this->getVilleById($donnees['id_ville']);
+            $temp->sport=$this->getSportById($donnees['id_sport']);
+            $temp->organisateur=$this->getOrganisateurById($donnees['id_organisateur']);
+            
+            $items[]=$temp;
+        }
+        return $items;
 	}
     
     public function getActiviteById($id){
-        $activite = $this->db->query('Select * from activite where id_activite='.$id);
-        return $activite->fetchAll();
+        $reponse = $this->db->query('Select * from activite where id_activite='.$id);
+        $donnees = $reponse->fetch();
+        $this->dateT=$donnees['date'];
+        $this->descr=$donnees['description'];
+        $this->nom=$donnees['nom'];
+        $this->id=$donnees['id_activite'];
+        $this->ville=$this->getVilleById($donnees['id_ville']);
+        $this->sport=$this->getSportById($donnees['id_sport']);
+        $this->organisateur=$this->getOrganisateurById($donnees['id_organisateur']);
     }
     
     public function getActiviteByResearch($date,$intituleSport,$ville){
@@ -26,7 +47,7 @@ class ActiviteDAL{
         return $activite->fetchAll();
     }
     
-        public function getActiviteByResearchWithoutDate($intituleSport,$ville){
+    public function getActiviteByResearchWithoutDate($intituleSport,$ville){
         $activite = $this->db->query("Select * from activite INNER JOIN sports on sports.id_sports=activite.id_sport INNER JOIN ville on ville.id_ville=activite.id_ville where sports.intitule='".$intituleSport."' and ville.intitule='".$ville."'");
         return $activite->fetchAll();
     }
@@ -73,6 +94,24 @@ class ActiviteDAL{
     public function getActiviteByIntitule($intituleSport){
         $activite = $this->db->query("Select * from activite INNER JOIN sports on sports.id_sports=activite.id_sport  where sports.intitule='".$intituleSport."'");
         return $activite->fetchAll();
+    }
+    
+    public function getVilleById($id){
+        $activite = $this->db->query("SELECT intitule FROM ville WHERE id_ville=".$id);
+        $res= $activite->fetch();
+        return $res['intitule'];
+    }
+    
+    public function getSportById($id){
+        $activite = $this->db->query("SELECT intitule FROM sports WHERE id_sports=".$id);
+		$res= $activite->fetch();
+        return $res['intitule'];
+    }
+    
+        public function getOrganisateurById($id){
+        $activite = $this->db->query("SELECT pseudo FROM utilisateur WHERE id_utilisateur=".$id);
+		$res= $activite->fetch();
+        return $res['pseudo'];
     }
 }
 

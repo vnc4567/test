@@ -15,16 +15,16 @@
             
             </div>
             <div id="partie_2">
-                {% for key, elm in activites %}
-                <h3>Organisé par {{ elm.id_organisateur}}</h3>
-                <p>Catégorie: {{elm.id_sport}}</p>
+                
+                <h3>Organisé par {{ activite.organisateur}}</h3>
+                <p>Catégorie: {{activite.sport}}</p>
                 <p>
-                    <img src="images/hour.svg" class="picto" alt="Image horloge">
+                    <img src="images/hour.svg" class="picto" alt="Image horloge">{{activite.dateT}}
                 </p>
                 <p>
-                    <img src="images/localisation.svg" class="picto" alt="Image localisation">{{elm.id_ville}}
+                    <img src="images/localisation.svg" class="picto" alt="Image localisation">{{activite.ville}}
                 </p>
-                <p id="descriptif">{{elm.description}}</p>
+                <p id="descriptif">{{activite.descr}}</p>
                 
             
             </div>
