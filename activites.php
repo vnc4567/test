@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once __DIR__ . '/vendor/autoload.php';
    include 'class/ActiviteDAL.php';
 use DAL\ActiviteDAL; 
@@ -10,7 +10,7 @@ $loader = new Twig_Loader_Filesystem( __DIR__ . './templates');
 
 
 $twig = new Twig_Environment($loader);
-$db = new PDO('mysql:host=localhost;dbname=projet_tut;port=3307;charset=utf8', 'root',  '');
+$db = new PDO('mysql:host=localhost;dbname=projet_tut;port=3306;charset=utf8', 'root',  '');
 
 $act = new ActiviteDAL($db);
 ?>

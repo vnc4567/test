@@ -6,7 +6,8 @@ namespace DAL;
 class ActiviteDAL{
 
 	protected $db;
-    public $id,$sport,$dateT,$descr,$ville,$nom,$maxInscrit,$niveau,$adresse,$organisateur;
+    public $id,$sport,$dateT,$descr,$ville,$nom,$maxInscrit,$niveau,$adresse,$organisateur,
+    $nbrInscrit;
 	public function __construct($db){
 		$this->db = $db;
 	}
@@ -24,7 +25,8 @@ class ActiviteDAL{
             $temp->ville=$this->getVilleById($donnees['id_ville']);
             $temp->sport=$this->getSportById($donnees['id_sport']);
             $temp->organisateur=$this->getOrganisateurById($donnees['id_organisateur']);
-            
+            $temp->maxInscrit=$donnees['max_inscrits'];
+            $temp->nbrInscrit=$this->getNbrInscritsByActvite($temp->id);
             $items[]=$temp;
         }
         return $items;
@@ -40,6 +42,12 @@ class ActiviteDAL{
         $this->ville=$this->getVilleById($donnees['id_ville']);
         $this->sport=$this->getSportById($donnees['id_sport']);
         $this->organisateur=$this->getOrganisateurById($donnees['id_organisateur']);
+    }
+    
+    public function getNbrInscritsByActvite($id){
+        $reponse = $this->db->query("SELECT COUNT(*)FROM activite_utilisateur WHERE id_activite='".$id."'");
+        $donnees = $reponse->fetch();
+        return $donnees['0']+1;
     }
     
     public function getActiviteByResearch($date,$intituleSport,$ville){

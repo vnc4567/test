@@ -2,7 +2,7 @@
 
 {% block content %}
  <div id="cadre5">
-        <h2 class="titrepartie">Titre de l'activité</h2>
+        <h2 class="titrepartie">{{ activite.nom}}</h2>
             <div id="partie_1">
                 <img src="images/badminton.jpg" id="image_activite" alt="Image inscrit">
                 <h2>Liste des participants</h2>
@@ -16,20 +16,28 @@
             </div>
             <div id="partie_2">
                 
-                <h3>Organisé par {{ activite.organisateur}}</h3>
-                <p>Catégorie: {{activite.sport}}</p>
+                <h3><span>Organisé par:</span> {{ activite.organisateur}}</h3>
+                <p><span>Catégorie:</span> {{activite.sport}}</p>
+                <p><span>Niveau requis:</span> {{activite.niveau}}</p>
                 <p>
-                    <img src="images/hour.svg" class="picto" alt="Image horloge">{{activite.dateT}}
+                    <span>Date et heure de l'activité</span> {{activite.dateT}} <span>à</span>
                 </p>
                 <p>
+                    <span>Lieu</span>
                     <img src="images/localisation.svg" class="picto" alt="Image localisation">{{activite.ville}}
                 </p>
-                <p id="descriptif">{{activite.descr}}</p>
+                <p id="descriptif"><span>Informations complémentaires:</span> {{activite.descr}}</p>
+                <br>
+                <br>
+                <p id="adresse"><span>Adresse:</span> {{activite.adresse}}</p>
+                
+             <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=****'></script><div style='overflow:hidden;height:200px;width:400px;'><div id='gmap_canvas' style='height:200px;width:400px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='http://maps-generator.com/fr'>Information</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=0ac8dc7eac2a79145438ee5fd80ff6f8e7b2beb4'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(43.7136,7.259500000000003),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(43.7136,7.259500000000003)});infowindow = new google.maps.InfoWindow({content:'<strong>Adresse de l\'activité</strong><br><br> Nice<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
                 
             
             </div>
-            
-            <input id="co2" type="submit" value="S'inscrire"/>
+     <form method="post" action="afficher_activite.php">
+            <input id="co2" type="submit" value="S'inscrire" name="inscrire"/>
+    </form>
     </div>
 
 {% endblock %}

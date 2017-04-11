@@ -52,8 +52,12 @@ table {
   src: url("Androgyne_TB.otf");
 }
 @font-face {
-  font-family: "mermaid";
-  src: url("Mermaid1001.ttf");
+  font-family: "arial";
+  src: url("arial_narrow_7.ttf");
+}
+@font-face {
+  font-family: "canta";
+  src: url("Cantarell-Regular.ttf");
 }
 
 
@@ -94,8 +98,8 @@ html, body {
 .menu li {
 	display: inline;
 	list-style: none;
-margin-right:30px;
-    font-family: "mermaid";
+margin-right:42px;
+    font-family: sans-serif;
    
 }
 
@@ -301,17 +305,20 @@ footer a:hover {
 #dernieres_activites{
     width:100%;
     height: 40%;
-    background-color: #f8f4ef;
+    background-color: #fcfafa;
     margin-top: 2%;
     border-color: #d9d5d5;
     border-style: solid;
     border-width: 1px;
+    box-shadow: 8px 8px 12px #d0cccc;
+    
     
 }
 .titrepartie{
 color: rgb(245,84,78);
 font-size: 28px;
 font-family: "andro";
+
 }
 
 
@@ -325,6 +332,12 @@ font-family: "andro";
     display: inline-block;
     text-align: center;
     vertical-align: middle;
+    border-radius: 10px;
+    margin-top: 3%;
+    font-family: "andro";
+    color: peachpuff;
+    font-size: 26px;
+    position: relative;
 }
 
 .details{
@@ -348,6 +361,8 @@ font-family: "andro";
         display: inline-block;
     text-align: left;
     font-size: 17px;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 .date{
     border-right: 2px;
@@ -358,6 +373,8 @@ font-family: "andro";
         display: inline-block;
     text-align: left;
     font-size: 17px;
+    font-weight: bold;
+    font-family: sans-serif;
    
 }
 .lieu{
@@ -365,6 +382,8 @@ font-family: "andro";
     text-align: left;
     width:24%;
     font-size: 17px;
+    font-weight: bold;
+    font-family: sans-serif;
    
 }
 .carre-first {
@@ -373,28 +392,35 @@ font-family: "andro";
         display: inline-block;
     text-align: left;
 }
+.inscritsnumber{
+  position: absolute;
+    right: 1%;
+    top: 1%:
+}
 
 
 /*Bloc de la recherche par sports*/
 #rechercheparsports{
     width:100%;
     Height: 40%;
-    background-color: #f8f4ef;
+    background-color: #fcfafa;
     margin-top: 2%;
     border-color: #d9d5d5;
     border-style: solid;
     border-width: 1px;
+      box-shadow: 8px 8px 12px #d0cccc;
 }
 
 /*Bloc des derniers inscrits*/
 #derniers_inscrits{
     width:100%;
     Height: 20%;
-    background-color: #f8f4ef;
+    background-color: #fcfafa;
     border-color: #d9d5d5;
     margin-top: 2%;
     border-style: solid;
     border-width: 1px;
+  
     
 }
 
@@ -406,7 +432,7 @@ font-family: "andro";
     position:absolute;
 	top:70%;
 	left:1%;
-	z-index:0;
+	z-index:5;
     opacity: 0.75;
     padding: 8px;
 }
@@ -419,7 +445,7 @@ font-family: "andro";
     position:absolute;
 	top:70%;
 	right:1%;
-	z-index:0;
+	z-index:12;
     opacity: 0.75;
     padding: 8px;
 }
@@ -468,25 +494,21 @@ font-family: "andro";
 }
 
 /*Organiser une activité*/
-.cadre12{
+
+.a{
     width:100%;
-    Height: 20%;
-    background-color: #f8f4ef;
+    height: 27%;
+    background-color: #fcfafa;
     margin-top: 2%;
     border-color: #d9d5d5;
     border-style: solid;
     border-width: 1px;
-}
+    box-shadow: 8px 8px 12px #d0cccc;    
 
-.cadre12 h3{
-    font-weight: 600;
 }
-
-#a #b #c #d {
-    display: inline;
-    text-align: left;
+#joueurs_maxi{
+    margin-top: 2%;
 }
-
 /*Back office*/
 
 #login{
@@ -589,7 +611,14 @@ text-align: left;
     text-align: left;
     vertical-align: top;
     margin-left: -16%;
+    font-size: 20px;    
    
+}
+
+span{
+    font-weight: bold;
+    color: rgb(245,84,78);
+    font-family: "canta";
 }
 
 .picto{
@@ -600,7 +629,7 @@ text-align: left;
 #cadre5{
         width:100%;
     height: 50%;
-    background-color: #f8f4ef;
+    background-color: #fcfafa;
     margin-top: 2%;
     border-color: #d9d5d5;
     border-style: solid;
@@ -624,6 +653,7 @@ text-align: left;
   padding: 10px 20px 10px 20px;
   text-decoration: none; 
     margin-left: 45%;
+    margin-top: 9%;
 
 }
 
@@ -660,6 +690,7 @@ text-align: left;
     height: 100%;
    
 }
+
 
 /*Profil*/
 #profil{

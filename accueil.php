@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 
 include 'class/ActiviteDAL.php';
@@ -22,7 +22,7 @@ $activites=$act->getAllActivite();
 //$utilisateur->deleteUtilisateur(2);
 //$utilisateur->createUtilisateur("pseudoTest","mdp","mail","2017-07-07");
 //$utilisateur->updateUtilisateur(3,"p","mdp2","mail2");
-
+$count = $act->getNbrInscritsByActvite('2');
 //Inscription
 if (isset($_POST['pseudo']) && isset($_POST['mdp']) && isset($_POST['email'])  ){
     $utilisateur = new UtilisateurDAL($db);
@@ -58,9 +58,9 @@ $template = $twig->loadTemplate('accueil.html');
         echo $template->render(array(
 		   'activites' => $activites,
 	    ));   
-    var_dump($activites);
+   
     
-
+var_dump($count);
          ?>
  
 </body>

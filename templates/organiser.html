@@ -1,0 +1,57 @@
+{% extends "mainLayout.html" %}
+
+{% block content %}
+
+
+
+<div class="a">  
+    <h2 class="titrepartie">Informations générales</h2>
+    <label id="name_activite">Nom de l'activité</label> : 
+    <input type="text" name="nom" placeholder="Nom de l'activité"/>
+    <label id="joueurs_maxi">Nombre de joueurs maximum</label> : <input type="text" name="nbr" placeholder="Nombre de joueurs maximum"/>
+    
+       <p>Niveau souhaité</p> 
+                <select name="niveau">
+                    <option value="Loisir">Loisir</option> 
+                    <option value="Débutant">Débutant</option>
+                    <option value="Moyen">Moyen</option>
+                    <option value="Bon niveau">Bon niveau</option>
+                    <option value="Compétition">Compétition</option>
+                </select>
+    
+      
+       <label for="infos">Informations complémentaires sur l'activité</label><br />
+       <textarea name="infos" id="infos"></textarea>
+   
+    
+</div>
+
+<div class="a">
+          <h2 class="titrepartie">Date et lieu de l'évènement</h2>
+            <p>Date de l'activité</p><input type="date" max="2012-06-25" min="2011-08-13" name="the_date">
+            <p>Heure de RDV</p> <input type="time" name="heure">
+        <h3>Où</h3>
+            <p>Ville</p>
+                <select name="villes">                
+                    <option value="Antibes">Antibes</option>
+                    <option value="Beausoleil">Beausoleil</option>
+                    <option value="Biot">Biot</option>
+                    <option value="Cagnes-sur-mer">Cagnes-sur-mer</option>
+                    <option value="Cannes">Cannes</option>
+                    <option value="Grasse">Grasse</option>
+                    <option value="Le-Cannet">Le-Cannet</option>
+                    <option value="Cannes">Mougins</option>
+                    <option value="Nice">Nice</option>
+                </select>
+            <p>Adresse</p> <input type="text" name="adresse" placeholder="Adresse exacte"/>
+            <input class="btn" type="submit" value="Organiser" 
+    </div>
+            </form>
+       
+         
+        
+     
+        
+            
+           
+{% endblock %}

@@ -24,7 +24,7 @@
         <h2 class="titrepartie">Les dernières activités créées:</h2>
         {% for key, elm in activites %}
             <div class="carre-first">
-                <div class="carre" onClick="ViewActivite({{elm.id}});"></div>
+                <div class="carre" onClick="ViewActivite({{elm.id}});">{{elm.nom}}<span class="inscritsnumber">{{elm.nbrInscrit}}/{{elm.maxInscrit}}</span></div>
                 <div class="cat_sport">{{elm.sport}}</div>
                 
                 <div class="date">{{elm.dateT}}</div>
@@ -41,7 +41,7 @@
         
     <!--Partie: recherche par sports-->
     <div id="rechercheparsports">
-        <h2 class="titrepartie">Recherche par sports</h2>
+        <h2 class="titrepartie">Les sports les plus pratiqués</h2>
         
             <div class="carre-first">
                 <div class="carre"></div>
@@ -67,7 +67,7 @@
         <h2 class="titrepartie">Les derniers inscrits</h2>
         <div class="carre-first">
                     <div class="membre"></div>
-                    <div class="cat_sport">Golf</div>
+                    <div class="cat_sport">{{elm.pseudo}}</div>
                 
                                     
                 
